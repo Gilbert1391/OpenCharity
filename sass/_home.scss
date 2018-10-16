@@ -1,0 +1,200 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    height: 2.7rem;
+
+    @include responsive(phone) {
+      display: none;
+    }
+  }
+
+  &__img-phone {
+    display: none;
+
+    @include responsive(phone) {
+      display: block;
+      height: 4rem;
+    }
+  }
+}
+
+.bg-wrapper {
+  background-color: $color-secondary;
+}
+
+.hero {
+  height: 48rem;
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8rem 0;
+  margin-top: 6.5rem;
+
+  @include responsive(phone) {
+    height: 40rem;
+    padding: 1rem;
+  }
+
+  &__text-content {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+
+    @include responsive(phone) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__heading {
+    font-size: 5.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    @include responsive(phone) {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    width: 50%;
+    margin: 1.5rem auto;
+
+    @include responsive(phone) {
+      width: 90%;
+      line-height: 1.4;
+      margin: 0.8rem auto;
+    }
+  }
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  @include responsive(phone) {
+    margin-bottom: 2rem;
+  }
+}
+
+.mission {
+  &__text-content {
+    text-align: center;
+    margin-bottom: 9rem;
+
+    @include responsive(phone) {
+      margin-bottom: 7rem;
+    }
+  }
+
+  &__text-bold {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 2rem;
+
+    @include responsive(phone) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__border-line {
+    width: 100%;
+    margin: 4.5rem auto;
+    border-bottom: 1px solid #d9dadd;
+
+    @include responsive(phone) {
+      margin: 2.5rem 0;
+    }
+  }
+}
+
+.member {
+  width: calc(100% / 5 - 4rem);
+
+  @include responsive(phone) {
+    width: 50%;
+  }
+
+  &__item {
+    height: 100%;
+
+    @include responsive(phone) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+
+  &__dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #979eb1;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &--active {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.blog-slider {
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  &__arrow-img {
+    height: 100%;
+  }
+}
+
+.margin-sides {
+  margin: 0 1rem;
+}
+
+.social {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+
+  &__item {
+    width: 1.8rem;
+    margin-right: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

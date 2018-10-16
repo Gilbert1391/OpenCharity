@@ -1,0 +1,46 @@
+.card {
+  width: calc(100% / 3 - 2rem);
+  height: 16.5rem;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  padding: 0 1.5rem;
+
+  @include responsive(phone) {
+    width: 100%;
+    margin-bottom: 6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__inner-wrapper {
+    height: 55%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    height: 100%;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 0.8rem solid #fff;
+  }
+
+  &__text-content {
+    position: absolute;
+    top: 6rem;
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+  }
+}

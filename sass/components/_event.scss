@@ -1,0 +1,25 @@
+.event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+
+  @include responsive(phone) {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__content {
+    margin-bottom: 1rem;
+  }
+
+  &__bold {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__span-green {
+    color: $color-primary;
+  }
+}

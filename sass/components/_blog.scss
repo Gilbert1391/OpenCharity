@@ -1,0 +1,23 @@
+.blog-group {
+  width: calc(100% / 4 - 2rem);
+  cursor: pointer;
+
+  @include responsive(phone) {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    color: $color-primary;
+    margin-bottom: 0.6rem;
+  }
+
+  &__content {
+    border-top: 1px solid #f1f2f4;
+    border-bottom: 1px solid #f1f2f4;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}

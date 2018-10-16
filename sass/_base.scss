@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// VARIABLES
+$color-primary: #5fc0c3;
+//#5ac0cf
+$color-secondary: #f1f2f5;
+$color-font: #565659;
+$color-gray-dark: #454850;
+
+// MIXINS
+/*
+// Media query manager
+0-600px        phone
+600-900px      table portrait
+900-1200px     table landscape
+{1200-1800px}  normal style
+1800px+        big screen
+
+$breakpoint argument choices:
+phone
+tab-port
+tab-land
+big-desktop
+1em = 16px
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {@content};  // 600px (600/16 = 37.5)
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {@content};  // 900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {@content};  // 1200px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {@content}; //1800px
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5% (16px is the default font size)
+  -webkit-font-smoothing: antialiased;
+
+  @include responsive(tab-land) { //widh < 1200px?
+   font-size: 56.25%; //1rem = 9px, 9/16 = 56.25
+ }
+
+ @include responsive(tab-port) { //widh < 900px?
+   font-size: 50%; //1rem = 8px, 8/16= 50
+ }
+
+ @include responsive(big-desktop) { //widh < 1800px?
+   font-size: 75%; //1rem = 12px, 75
+ }
+}
+
+@font-face {
+  font-family: MuseoSans;
+  src: url("/Fonts/Museo Sans/MuseoSans_300.otf"),
+    url("/Fonts/Museo Sans/MuseoSans_500.otf"),
+    url("/Fonts/Museo Sans/MuseoSans_700.otf");
+}
+
+body {
+  font-family: MuseoSans, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: $color-font;
+}
